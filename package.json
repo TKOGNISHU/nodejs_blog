@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "This project create to study nodejs",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect ./src/index.js",
+    "watch": "node-sass --watch ./src/resource/scss/ --output ./src/public/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TKOGNISHU/nodejs_blog.git"
+  },
+  "author": "TKOGNISHU",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TKOGNISHU/nodejs_blog/issues"
+  },
+  "homepage": "https://github.com/TKOGNISHU/nodejs_blog#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16"
+  }
+}
