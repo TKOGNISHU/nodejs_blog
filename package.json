@@ -23,7 +23,7 @@
         "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
     },
     "hooks": {
-        "pre-commit": "lint-staged"
+        "pre-commit": "npm run beauty"
     },
     "dependencies": {
         "express": "^4.18.1",
