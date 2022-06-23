@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.engine(
     '.hbs',
     handlebars.engine({
-                extname: '.hbs',
+        extname: '.hbs',
     }),
 );
 app.set('view engine', '.hbs');
