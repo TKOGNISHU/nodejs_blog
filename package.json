@@ -4,7 +4,7 @@
     "description": "This project create to study nodejs",
     "main": "./src/index.js",
     "scripts": {
-        "pre-commit": "lint-staged",
+        "pre-commit": "lint-staged --allow-empty",
         "start": "nodemon --inspect ./src/index.js",
         "watch": "node-sass --watch ./src/resource/scss/ --output ./src/public/css/",
         "test": "echo \"Error: no test specified\" && exit 1",
