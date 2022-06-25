@@ -1,21 +1,21 @@
-const Course = require('../models/Course');
+const Course = require('../models/Course')
 
 class SiteController {
     // [get] /
     index(req, res) {
         Course.find({}, function (err, course) {
             if (!err) {
-                res.json(course);
+                res.json(course)
             } else {
-                res.status.json(err);
+                res.status.json(err)
             }
-        });
+        })
     }
 
     // [get] /search
     show(req, res) {
-        res.render('search');
+        res.render('search')
     }
 }
 
-module.exports = new SiteController();
+module.exports = new SiteController()
