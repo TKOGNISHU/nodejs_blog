@@ -1,8 +1,10 @@
 module.exports = {
-    multialMongooseToObject(mongooses) {
-        return mongooses.map((mongoose) => mongoose.toObject())
+    multipleMongooseToObject(mongooses) {
+        return Array.isArray(mongooses)
+            ? mongooses.map((mongoose) => mongoose.toObject())
+            : mongooses
     },
     mongooseToObject(mongoose) {
-        return mongoose.toObject()
+        return mongoose ? mongoose.toObject() : mongoose
     },
 }
