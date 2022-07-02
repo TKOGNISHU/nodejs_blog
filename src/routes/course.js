@@ -10,8 +10,16 @@ router.get('/:slug', courseController.show)
 
 // [POST]
 router.post('/store', courseController.store)
+router.post('/handle-action', courseController.handleAction)
 
 // [PUT]
-router.put('/:id/update', courseController.update)
+router.put('/:id', courseController.update)
+
+// PATCH
+router.patch('/:id/restore', courseController.restore)
+
+// [DELETE]
+router.delete('/:id', courseController.delete)
+router.delete('/:id/force', courseController.forceDelete)
 
 module.exports = router
