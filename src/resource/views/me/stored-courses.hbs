@@ -24,9 +24,18 @@
     <table class="table table-hover">
         <thead>
             <th class="text-end" scope="col" colspan="2">STT</th>
-            <th scope="col">Tên khóa học</th>
-            <th scope="col">Trình độ</th>
-            <th scope="col" colspan="2">Cập nhật lúc</th>
+            <th scope="col">
+                Tên khóa học
+                {{{sort 'name' _sort}}}
+            </th>
+            <th scope="col">
+                Trình độ
+                {{{sort 'level' _sort}}}
+            </th>
+            <th scope="col" colspan="2">
+                Cập nhật lúc
+                {{{sort 'updatedAt' _sort}}}
+            </th>
         </thead>
 
         <tbody>

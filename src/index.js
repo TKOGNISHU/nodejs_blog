@@ -6,6 +6,7 @@ const methodOverride = require('method-override')
 
 const route = require('./routes')
 const db = require('./config/db/index')
+const sortMiddleware = require('./app/middlewares/SortMiddleware')
 
 // connect to db
 db.connect()
@@ -20,6 +21,8 @@ app.use(
     }),
 )
 app.use(express.json())
+// hand middleware
+app.use(sortMiddleware)
 
 // HTTP logger
 app.use(morgan('combined'))
@@ -38,6 +41,31 @@ app.engine(
 
         helpers: {
             sum: (a, b) => a + b,
+            sort: (field, sort) => {
+                const sortField = field === sort.column ? sort.type : 'default'
+
+                const icons = {
+                    default: 'fa-solid fa-sort',
+                    asc: 'fa-solid fa-arrow-down-short-wide',
+                    desc: 'fa-solid fa-arrow-down-wide-short',
+                }
+
+                const icon = icons[sortField]
+
+                const types = {
+                    default: 'desc',
+                    asc: 'desc',
+                    desc: 'asc',
+                }
+
+                const type = types[sort.type]
+
+                return `
+                    <a href="?_sort&column=${field}&type=${type}" class="ms-1 text-dark">
+                        <i class="${icon}"></i>
+                    </a>
+                `
+            },
         },
     }),
 )
